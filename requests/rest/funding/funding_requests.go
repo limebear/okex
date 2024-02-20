@@ -1,6 +1,6 @@
 package funding
 
-import "github.com/amir-the-h/okex"
+import "github.com/limebear/okex"
 
 type (
 	GetBalance struct {
@@ -33,14 +33,23 @@ type (
 		Limit  int64             `json:"limit,omitempty,string"`
 		State  okex.DepositState `json:"state,omitempty,string"`
 	}
+
+	ReceiverInfo struct {
+		WalletType    string `json:"walletType"`
+		ExchId        string `json:"exchId"`
+		RcvrFirstName string `json:"rcvrFirstName"`
+		RcvrLastName  string `json:"rcvrLastName"`
+	}
+
 	Withdrawal struct {
-		Ccy    string                     `json:"ccy"`
-		Chain  string                     `json:"chain,omitempty"`
-		ToAddr string                     `json:"toAddr"`
-		Pwd    string                     `json:"pwd"`
-		Amt    float64                    `json:"amt,string"`
-		Fee    float64                    `json:"fee,string"`
-		Dest   okex.WithdrawalDestination `json:"dest,string"`
+		Ccy      string                     `json:"ccy"`
+		Chain    string                     `json:"chain,omitempty"`
+		ToAddr   string                     `json:"toAddr"`
+		Pwd      string                     `json:"pwd"`
+		Amt      float64                    `json:"amt,string"`
+		Fee      float64                    `json:"fee,string"`
+		Dest     okex.WithdrawalDestination `json:"dest,string"`
+		RcvrInfo ReceiverInfo               `json:"rcvrInfo"`
 	}
 	GetWithdrawalHistory struct {
 		Ccy    string               `json:"ccy,omitempty"`
