@@ -1,18 +1,21 @@
 package funding
 
-import "github.com/limebear/okex"
+import (
+	"github.com/limebear/okex"
+	"github.com/shopspring/decimal"
+)
 
 type (
 	Currency struct {
-		Ccy         string `json:"ccy"`
-		Name        string `json:"name"`
-		Chain       string `json:"chain"`
-		MinWd       string `json:"minWd"`
-		MinFee      string `json:"minFee"`
-		MaxFee      string `json:"maxFee"`
-		CanDep      bool   `json:"canDep"`
-		CanWd       bool   `json:"canWd"`
-		CanInternal bool   `json:"canInternal"`
+		Ccy         string          `json:"ccy"`
+		Name        string          `json:"name"`
+		Chain       string          `json:"chain"`
+		MinWd       decimal.Decimal `json:"minWd"`
+		MinFee      decimal.Decimal `json:"minFee"`
+		MaxFee      decimal.Decimal `json:"maxFee"`
+		CanDep      bool            `json:"canDep"`
+		CanWd       bool            `json:"canWd"`
+		CanInternal bool            `json:"canInternal"`
 	}
 	Balance struct {
 		Ccy       string `json:"ccy"`
