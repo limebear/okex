@@ -46,8 +46,8 @@ type (
 		Chain    string                     `json:"chain,omitempty"`
 		ToAddr   string                     `json:"toAddr"`
 		Pwd      string                     `json:"pwd"`
-		Amt      float64                    `json:"amt,string"`
-		Fee      float64                    `json:"fee,string"`
+		Amt      string                     `json:"amt"`
+		Fee      string                     `json:"fee"`
 		Dest     okex.WithdrawalDestination `json:"dest,string"`
 		RcvrInfo ReceiverInfo               `json:"rcvrInfo"`
 	}
